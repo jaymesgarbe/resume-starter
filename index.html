@@ -82,7 +82,7 @@
     }
 
     .projects {
-      padding-left: 40px;
+      padding-left: 20px;
     }
 
     dt {
@@ -163,17 +163,45 @@
     <div class="inner">
       <h3>SUHSD Information Technology Dept. | Summer Intership '22</h3>
       <h4>Synopsis:</h4> 
-      <p>General description of my time, include all software and stuff like that</p>
+      <p>For the three months of my summer, I worked 40 hour weeks plus overtime assisting
+        my former high school district's IT department with multiple software 
+        development projects.
+      </p>
       <h4>Projects:</h4>
       <dl class="projects">
         <dt>Data Metric</dt>
-        <dd>description of data-metric</dd>
+        <dd>I tore into an existing Virtual Machine that was used for displaying
+          the amount of tickets our department had to accomlplish on a monitor 
+          within our office. We use a new service, FreshService, to track these
+          tickets, and the VM was pulling from the deprecated service. My coworker and I 
+          wrote a Powershell script to pull tickets and devices from SUHSD services using my SPSFreshService 
+          and SPSImmyBot modules I built prior. The data is arranged contingent to 
+          InfluxDB, a time series database that we pipe out ticket data into. 
+          A pipeline containerizes our code using Docker, and sends it to the
+          VM which runs every 10 minutes. We finally built a Grafana instance
+          to query and display our InfluxDB data on the monitor.
+        </dd>
         <dt>SPSFreshService/SPSImmyBot</dt>
-        <dd>description of SPSFreshService</dd>
+        <dd>Using the FreshService API documentation, I built my first
+          fully fledged powershell module that queries tickets, agents, requesters,
+          departments, and most other data that our department stores within FreshService.
+          The module is able to create new instances of each object, update existing objects,
+          and collect groups of items based on many different parameters. I then built a similar
+          module based around the ImmyBot service. 
+        </dd>
         <dt>Clever Toolkit</dt>
-        <dd>description of Clever Toolkit</dd>
+        <dd>I was tasked to build a Chrome Extension to add modularity to the service
+          Clever. I worked in Javascript, CSS, and HTML, all languages I had little 
+          prowess in prior. I used a popup that allows the user to add, delete, 
+          show, and hide columns of Application data displayed on the Clever Developer
+          portal. 
+        </dd>
         <dt>Aeries-FreshService Sync</dt>
-        <dd>description of Aeries-FreshService Sync</dd>
+        <dd>Using my SPSFreshService module and the public AeriesApi, I pulled
+          the data of all the teachers in our district and compared their similar 
+          attributes, overwriting the FreshService entries with the much more populated 
+          and trustworthy Aeries entries.
+        </dd>
       </dl>
       <h4>Miscellaneous Skills:</h4>
       <p>Other things I learned as I id my projects such as Powershell, Azure DevOps environment (pipelines), Google Workspace, code documentation, peer review etc.</p>
