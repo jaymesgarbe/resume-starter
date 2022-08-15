@@ -158,6 +158,16 @@
         line-height: 1.6;
         font-weight: bolder;
       }
+
+      table, th, td {
+        border: 1px solid #d4cb92;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      table {
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
@@ -206,16 +216,23 @@
         </div>
         <div class="divider"><center>Song of the Week Archive</center></div>
         <div id="archive">
-          <div class="row"> 
-            <div class="left">
-              <p><b><center>Week 1: Desafinado - Kali Uchis</center></b></p>
-              <p><b><center>Week 2: Slide Around - Chance the Rapper</center></b></p>
-            </div>
-            <div class="right">
-              <p><b><center>9.1</center></b></p>
-              <p><b><center>8.3</center></b></p>
-            </div>
-          </div> 
+          <table style="width:100%">
+            <tr>
+              <th>Week #</th>
+              <th>Title & Artist</th>
+              <th>Rating</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Desafinado - Kali Uchis</td>
+              <td>9.1/10</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Slide Around - Chance the Rapper</td>
+              <td>8.3/10</td>
+            </tr>
+          </table>
         </div>
         <div class="button">
           <script src="updateSotw.js"></script>
