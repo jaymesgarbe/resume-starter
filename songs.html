@@ -90,6 +90,18 @@
         padding-right: 15px;
       }
 
+      .left {
+        flex: 80%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .right {
+        flex: 20%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
       li {
         margin-top: 15px;
       }
@@ -191,14 +203,23 @@
         </div>
         <div class="divider"><center>Song of the Week Archive</center></div>
         <div id="archive">
-        <p><b><center>Week 1: Desafinado - Kali Uchis</center></b></p>
-        <p><b><center>Week 2: Slide Around - Chance the Rapper</center></b></p>
+          <div class="row"> 
+            <div class="left">
+              <p><b><center>Week 1: Desafinado - Kali Uchis</center></b></p>
+              <p><b><center>Week 2: Slide Around - Chance the Rapper</center></b></p>
+            </div>
+            <div class="right">
+              <p><b><center>9.1</center></b></p>
+              <p><b><center>8.3</center></b></p>
+            </div>
+          </div> 
         </div>
         <div class="button">
-        <button type="button" id="updateButton" onclick="updateSotW()"><b>Update Song of the Week</b></button>
+          <script src="updateSotw.js"></script>
+            <button type="button" id="updateButton" onclick="test()"><b>Update Song of the Week</b></button>
+          <script src="updateSotW.js"></script>
         </div>
       </div>
-      <script src="updateSotw.js"></script>
     </div>
   </body>
 </html>

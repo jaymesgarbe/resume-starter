@@ -1,6 +1,9 @@
 // automate Song of the Week updating. . . 
+function test() {
+    alert('COME ON WORK')
+}
+
 function updateSotW() {
-    console.log('clicked!')
 
     // adding current song to archive
     const titleEl = document.getElementsById('title')
