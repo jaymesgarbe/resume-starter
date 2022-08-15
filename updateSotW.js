@@ -5,12 +5,10 @@ function test() {
 
 function updateSotW() {
 
-    document.getElementById('updateButton').innerText('updated!')
-
-    // // adding current song to archive
-    // const titleEl = document.getElementsById('title')
-    // const archive = document.getElementsById('archive')
-    // archive.insertAdjacentHTML('beforeend',`<p><b><center>${titleEl.innerText}</center></b></p>`)
+    // adding current song to archive
+    const titleEl = document.getElementById('title')
+    const archive = document.getElementById('archive')
+    archive.insertAdjacentHTML('beforeend',`<p><b><center>${titleEl.innerText}</center></b></p>`)
 
     // // changing title to new SotW
     // var newTitle = prompt(`New SotW -- Old Title: ${titleEl}`)
@@ -22,12 +20,12 @@ function updateSotW() {
     // rating.innerText(`Overall Rating: ${newRating}/10`)
 
     // // changing fav part
-    // var favPart = document.getElementsById('favPart')
+    // var favPart = document.getElementById('favPart')
     // var newFavPart = prompt('What is your fav part of this song')
     // favPart.innerText(newFavPart)
 
     // // changing overall review
-    // var overall = document.getElementsById('overall')
+    // var overall = document.getElementById('overall')
     // var newOverall = prompt('What is your overall review of this song')
     // overall.innerText(newOverall)
 
