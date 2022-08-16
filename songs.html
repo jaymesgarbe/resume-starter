@@ -303,7 +303,7 @@
         <div class="popupcontent">
           <h1>Add Email to Newsletter</h1>
           <form
-            method="POST"
+            id="newsletterForm"
             action="https://script.google.com/macros/s/AKfycbz9vpZTo8TU4OHXMiNtbA4GxGes1-Tl21CEuUuTmW7XebDTOlAlfk-0nEoXslG3ynjPSw/exec"
           >
             <label>Full Name:</label><br />
@@ -321,7 +321,7 @@
               placeholder="Email"
               type="text"
               minlength="1"
-              pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
+              pattern="^([A-Za-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
               required
             /><br /><br />
             <input type="submit" />
