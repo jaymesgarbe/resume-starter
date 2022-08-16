@@ -321,6 +321,7 @@
               placeholder="Name"
               type="text"
               minlength="1"
+              pattern="^[A-Za-z\s]+$"
               required
             /><br /><br />
             <label>Email:</label><br />
@@ -329,6 +330,7 @@
               placeholder="Email"
               type="text"
               minlength="1"
+              pattern="^([A-Za-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
               required
             /><br /><br />
             <input type="submit" />
