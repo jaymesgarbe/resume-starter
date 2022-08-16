@@ -304,7 +304,12 @@
           <h1>Add Email to Newsletter</h1>
           <form>
             <label>Full Name:</label><br />
-            <input type="text" minlength="1" required /><br /><br />
+            <input
+              type="text"
+              minlength="1"
+              pattern="^[A-Za-z\s]+$"
+              required
+            /><br /><br />
             <label>Email:</label><br />
             <input
               type="text"
@@ -313,6 +318,7 @@
               required
             /><br /><br />
             <input type="submit" />
+            <input type="reset" />
           </form>
         </div>
       </div>
