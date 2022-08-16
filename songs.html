@@ -159,7 +159,9 @@
         font-weight: bolder;
       }
 
-      table, th, td {
+      table,
+      th,
+      td {
         border: 1px solid #d4cb92;
         text-align: center;
         font-weight: bold;
@@ -168,16 +170,51 @@
       table {
         margin-bottom: 20px;
       }
+
+      #overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background: #999;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        z-index: 100;
+      }
+
+      #popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        width: 300px;
+        height: 300px;
+        margin-left: -250px; /*Half the value of width to center div*/
+        margin-top: -250px; /*Half the value of height to center div*/
+        z-index: 200;
+        border: 4px solid #d4cb92;
+      }
+
+      form {
+        text-align: center;
+        font-size: larger;
+        margin: 10px;
+      }
     </style>
   </head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR2HL3LG91"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-WR2HL3LG91"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'G-WR2HL3LG91');
+    gtag("config", "G-WR2HL3LG91");
   </script>
   <body>
     <div id="wrapper">
@@ -191,7 +228,9 @@
       </div>
       <div id="main">
         <h1>Song of the Week</h1>
-        <h2 style="font-size: 30px" id="title">Week 3: Lisa Sawyer - Leon Bridges</h2>
+        <h2 style="font-size: 30px" id="title">
+          Week 3: Lisa Sawyer - Leon Bridges
+        </h2>
         <div class="row">
           <div class="column">
             <img
@@ -202,30 +241,37 @@
             />
             <h2 id="rating">Overall Rating: 9.3/10</h2>
             <h2>Listen Here</h2>
-            <a href="https://open.spotify.com/track/2LT411lEiNGDJyOZLHL5Ak?si=1ce210e89f564213" target="_blank"><h3><center>Spotify</center></h3></a>
-            <a href="https://www.youtube.com/watch?v=Tx41vxJWyYU" target="_blank"><h3><center>Youtube</center></h3></a>
+            <a
+              href="https://open.spotify.com/track/2LT411lEiNGDJyOZLHL5Ak?si=1ce210e89f564213"
+              target="_blank"
+              ><h3><center>Spotify</center></h3></a
+            >
+            <a
+              href="https://www.youtube.com/watch?v=Tx41vxJWyYU"
+              target="_blank"
+              ><h3><center>Youtube</center></h3></a
+            >
           </div>
           <div class="column">
             <h2>Fav Part of Song</h2>
             <p id="favPart">
-              Literally any word this man speaks is heaven-sent. 
-              That being said, I absolutely adore how he sings 
-              the line "the complex-ion of a sweet praline". The 
-              following rhymes of that stanza flow so beautifully 
-              and arrhythmically imperfect as well.
+              Literally any word this man speaks is heaven-sent. That being
+              said, I absolutely adore how he sings the line "the complex-ion of
+              a sweet praline". The following rhymes of that stanza flow so
+              beautifully and arrhythmically imperfect as well.
             </p>
             <h2>Overall Review</h2>
-            <p id="overall">I was fully prepared to put a different 
-              song in place (a certain late-summer bombshell by Nicki Minaj),
-              yet I heard this song for the first time in quite some time 
-              and realized that this just needed to take the spot. 
-              Applause.
+            <p id="overall">
+              I was fully prepared to put a different song in place (a certain
+              late-summer bombshell by Nicki Minaj), yet I heard this song for
+              the first time in quite some time and realized that this just
+              needed to take the spot. Applause.
             </p>
           </div>
         </div>
         <div class="divider"><center>Song of the Week Archive</center></div>
         <div id="archive">
-          <table style="width:100%">
+          <table style="width: 100%">
             <tr>
               <th>Week #</th>
               <th>Title & Artist</th>
@@ -244,10 +290,32 @@
           </table>
         </div>
         <div class="button">
-          <button type="button" id="updateButton" onclick="updateSotW()"><b>Update Song of the Week</b></button>
+          <button type="button" id="updateButton" onclick="addToNewsletter()">
+            <b>Subscribe for Email Notifications</b>
+          </button>
         </div>
       </div>
     </div>
     <script src="updateSotw.js"></script>
+    <div id="buttonPopup" hidden>
+      <div id="overlay"></div>
+      <div id="popup">
+        <div class="popupcontent">
+          <h1>Add Email to Newsletter</h1>
+          <form>
+            <label>Full Name:</label><br />
+            <input type="text" minlength="1" required /><br /><br />
+            <label>Email:</label><br />
+            <input
+              type="text"
+              minlength="1"
+              pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
+              required
+            /><br /><br />
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
