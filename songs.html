@@ -302,9 +302,14 @@
       <div id="popup">
         <div class="popupcontent">
           <h1>Add Email to Newsletter</h1>
-          <form>
+          <form
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbz9vpZTo8TU4OHXMiNtbA4GxGes1-Tl21CEuUuTmW7XebDTOlAlfk-0nEoXslG3ynjPSw/exec"
+          >
             <label>Full Name:</label><br />
             <input
+              name="Name"
+              placeholder="Name"
               type="text"
               minlength="1"
               pattern="^[A-Za-z\s]+$"
@@ -312,6 +317,8 @@
             /><br /><br />
             <label>Email:</label><br />
             <input
+              name="Email"
+              placeholder="Email"
               type="text"
               minlength="1"
               pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"
