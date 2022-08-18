@@ -12,6 +12,11 @@ window.onload = function () {
     }).then(() => {
       alert("Success!");
       document.getElementById("buttonPopup").hidden = true;
+      document.getElementById("emailButton").innerHTML = `
+      <div id='boxDiv'>
+        <h3 class='afterButton'> Subscribed to<br />SotW Notifications! </h3>
+      </div>
+      `;
     });
   });
 };
