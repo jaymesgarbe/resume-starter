@@ -28,3 +28,12 @@ function test() {
 function addToNewsletter() {
   document.getElementById("buttonPopup").hidden = false;
 }
+
+const renderSongs = async () => {
+  let uri = "http://localhost:3000/songs";
+  const res = await fetch(uri);
+  const songs = await res.json();
+  console.log(songs);
+};
+
+window.addEventListener("DOMContentLoaded", (e) => renderSongs());
