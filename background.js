@@ -29,11 +29,66 @@ function addToNewsletter() {
   document.getElementById("buttonPopup").hidden = false;
 }
 
-const renderSongs = async () => {
-  let uri = "http://localhost:3000/songs";
-  const res = await fetch(uri);
-  const songs = await res.json();
-  console.log(songs);
-};
+const likeCounter = document.createElement("span");
 
-window.addEventListener("DOMContentLoaded", (e) => renderSongs());
+fetch("http://localhost:3000/songs")
+  .then((resp) => resp.json())
+  .then((currentLikeData) => setLikeCounter(currentLikeData, id, likeCounter));
+
+function setLikeCounter(currentLikeData, id, likeCounter) {
+  const likedSong = currentLikeData.find(
+    (Element) => Element["id"] === id.innerText
+  );
+
+  if (typeof likedSong === "undefined") {
+    likeCounter.innerText = "0 likes";
+  } else if (typeof likedSong === 1) {
+    likeCounter.innerText = "1 like";
+  } else {
+    likeCounter.innerText = `${likedSong["likes"]} likes`;
+  }
+}
+
+function handleLike(e) {
+  let currentLikes = parseInt(e.target.previousElementSibling.innerText);
+  const id = e.target.previousElementSibling.previousElementSibling.innerText;
+
+  if (currentLikes === 0) {
+    const newSong = {
+      id: id,
+      likes: 1,
+    };
+
+    fetch("http://localhost:3000/songs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newSong),
+    })
+      .then((resp) => resp.json())
+      .then(
+        () =>
+          (e.target.previousElementSibling.innerText = `${
+            currentLikes + 1
+          } like`)
+      );
+  } else {
+    fetch(`http://localhost:3000/songs${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        likes: currentLikes + 1,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then(
+        () =>
+          (e.target.previousElementSibling.innerText = `${
+            currentLikes + 1
+          } likes`)
+      );
+  }
+}
