@@ -121,8 +121,7 @@
 
       .thumbnail {
         width: 115px;
-        float: right;
-        margin: 5px;
+        float: left;
       }
 
       .title {
@@ -158,7 +157,6 @@
 
       img {
         margin: 1px;
-        border: 4px solid #80a4ed;
       }
 
       p {
@@ -178,6 +176,10 @@
         margin-bottom: 20px;
       }
 
+      #imgSrc {
+        border: 4px solid #80a4ed;
+      }
+
       #overlay {
         position: fixed;
         top: 0;
@@ -187,6 +189,13 @@
         height: 100%;
         opacity: 0.8;
         z-index: 100;
+      }
+
+      #leftColumn {
+        float: left;
+        margin-bottom: 30px;
+        padding-left: 15px;
+        padding-right: 20px;
       }
 
       #popup {
@@ -250,89 +259,102 @@
         >
           Week 9: Songs for Women - Frank Ocean
         </h2>
-        <div class="row">
-          <div class="column" id="leftColumn">
+        <div id="leftColumn">
+          <center>
             <img
               id="imgSrc"
               src="images/sotw.png"
               alt="Cover art for Song of the Week"
               height="250"
             />
-            <h2 id="rating">Overall Rating: 9.4/10</h2>
-            <h2>Listen Here</h2>
-            <a
-              href="https://open.spotify.com/track/4p1Er46wDz4zGQI7Sxor3W?si=675ec49a1a6440cf"
-              target="_blank"
-              hidden
-              ><h3><center>Spotify</center></h3></a
-            >
-            <a
-              href="https://www.youtube.com/watch?v=1vpeQEKDpKQ"
-              target="_blank"
-              ><h3><center>Youtube</center></h3></a
-            >
-            <div id="newFeature" hidden>
-              <h2>Do you like this song?</h2>
-              <div class="row">
-                <div class="column">
-                  <center>
-                    <button type="button" id="like" onclick="handleLike()">
-                      Yes !!
-                    </button>
-                  </center>
-                </div>
-                <div class="column">
-                  <center>
-                    <button type="button" id="meh" onclick="">Meh ..</button>
-                  </center>
-                </div>
-                <div class="column">
-                  <center>
-                    <button type="button" id="hate" onclick="">Nah :(</button>
-                  </center>
-                </div>
+          </center>
+          <h2 id="rating">Overall Rating: 9.4/10</h2>
+          <h2>Listen Here</h2>
+          <div class="row">
+            <div class="column">
+              <a
+                href="https://open.spotify.com/track/2DgUMMxXxWbCxEK55KUIfx?si=052d31cf2cb24c72"
+                target="_blank"
+                ><center>
+                  <img
+                    id="spotifyIcon"
+                    src="images/spotify.png"
+                    alt="Spotify Link"
+                    height="50"
+                  /></center
+              ></a>
+            </div>
+            <div class="column">
+              <a
+                href="https://www.youtube.com/watch?v=UXHkn9rx4Xk"
+                target="_blank"
+                ><center>
+                  <img
+                    id="youtubeIcon"
+                    src="images/youtube.png"
+                    alt="Youtube Link"
+                    height="50"
+                  /></center
+              ></a>
+            </div>
+          </div>
+          <div id="newFeature" hidden>
+            <h2>Do you like this song?</h2>
+            <div class="row">
+              <div class="column">
+                <center>
+                  <button type="button" id="like" onclick="handleLike()">
+                    Yes !!
+                  </button>
+                </center>
+              </div>
+              <div class="column">
+                <center>
+                  <button type="button" id="meh" onclick="">Meh ..</button>
+                </center>
+              </div>
+              <div class="column">
+                <center>
+                  <button type="button" id="hate" onclick="">Nah :(</button>
+                </center>
               </div>
             </div>
+          </div>
+          <br /><br />
+          <div class="button" id="emailButton">
+            <button type="button" id="updateButton" onclick="addToNewsletter()">
+              <b>Subscribe for <br />Email Notifications</b>
+            </button>
+          </div>
+        </div>
+        <div>
+          <h2>Fav Part of Song</h2>
+          <p id="favPart">
+            I indeed have a favorite verse/stanza from this song and it is as
+            follows (second chorus): "And every time a n**** ask if I sing songs
+            to get at women, I say nah, he said: 'who do you think you're
+            kidding, I know you, you stole my girlfriend.'" This line concludes
+            the little narrative that Frank tells throughout the song, and is a
+            pretty enjoyable conclusion at that.
+          </p>
+          <h2>Overall Review</h2>
+          <p id="overall">
+            *DISCLAIMER* Please don't get too attached to this song like I have,
+            it is not on ANY mainstream music streaming services.
             <br /><br />
-            <div class="button" id="emailButton">
-              <button
-                type="button"
-                id="updateButton"
-                onclick="addToNewsletter()"
-              >
-                <b>Subscribe for <br />Email Notifications</b>
-              </button>
-            </div>
-          </div>
-          <div class="column">
-            <h2>Fav Part of Song</h2>
-            <p id="favPart">
-              I indeed have a favorite verse/stanza from this song and it is as
-              follows (second chorus): "And every time a n**** ask if I sing
-              songs to get at women, I say nah, he said: 'who do you think
-              you're kidding, I know you, you stole my girlfriend.'" This line
-              concludes the little narrative that Frank tells throughout the
-              song, and is a pretty enjoyable conclusion at that.
-            </p>
-            <h2>Overall Review</h2>
-            <p id="overall">
-              *DISCLAIMER* Please don't get too attached to this song like I
-              have, it is not on ANY mainstream music streaming services.
-              <br /><br />
-              The production of this song alone makes this track worth plentiful
-              praise, but what sets it apart from all the other amazing tracks
-              on this mixtape is the attractive story-telling within. I'm not
-              going to outline the story here, you can perceive it for yourself,
-              but take notes of it while appreciating the equally impressive
-              production. If you need more of this mixtape, I will put a link to
-              my favorite place to listen to it (it is very good), but mind the
-              disclaimer, it truly is a slippery slope.<a
-                href="https://mixtapemonkey.com/54/frank-ocean-nostalgia-ultra"
-                target="_blank"
-                ><h3><center>Nostalgia Ultra Mixtape</center></h3></a
-              >
-            </p>
-          </div>
+            The production of this song alone makes this track worth plentiful
+            praise, but what sets it apart from all the other amazing tracks on
+            this mixtape is the attractive story-telling within. I'm not going
+            to outline the story here, you can perceive it for yourself, but
+            take notes of it while appreciating the equally impressive
+            production. If you need more of this mixtape, I will put a link to
+            my favorite place to listen to it (it is very good), but mind the
+            disclaimer, it truly is a slippery slope.<a
+              href="https://mixtapemonkey.com/54/frank-ocean-nostalgia-ultra"
+              target="_blank"
+              ><h3><center>Nostalgia Ultra Mixtape</center></h3></a
+            >
+          </p>
         </div>
         <div id="celebSotW">
           <div class="divider"><center>Celebrity Song of the Week</center></div>
@@ -344,17 +366,31 @@
               <h2 id="rating">Overall Rating: 9.0/10</h2>
             </div>
             <div class="column">
-              <h2>Listen Here</h2>
-              <a
-                href="https://open.spotify.com/track/2DgUMMxXxWbCxEK55KUIfx?si=052d31cf2cb24c72"
-                target="_blank"
-                ><h3><center>Spotify</center></h3></a
-              >
-              <a
-                href="https://www.youtube.com/watch?v=UXHkn9rx4Xk"
-                target="_blank"
-                ><h3><center>Youtube</center></h3></a
-              >
+              <center><h2>Listen Here</h2></center>
+              <div class="row">
+                <div class="column">
+                  <a
+                    href="https://open.spotify.com/track/2DgUMMxXxWbCxEK55KUIfx?si=052d31cf2cb24c72"
+                    target="_blank"
+                    ><img
+                      id="spotifyIcon"
+                      src="images/spotify.png"
+                      alt="Spotify Link"
+                      height="50"
+                  /></a>
+                </div>
+                <div class="column">
+                  <a
+                    href="https://www.youtube.com/watch?v=UXHkn9rx4Xk"
+                    target="_blank"
+                    ><img
+                      id="youtubeIcon"
+                      src="images/youtube.png"
+                      alt="Youtube Link"
+                      height="50"
+                  /></a>
+                </div>
+              </div>
             </div>
           </div>
           <h2>Overall Review</h2>
