@@ -1,152 +1,141 @@
 <!DOCTYPE html> 
 <html> 
-<head> 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-  <title>Jaymes Garbe</title> 
-  <link rel="stylesheet" href="style.css" />
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <title>Jaymes Garbe</title> 
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-WR2HL3LG91');
-  </script>
   <body> 
-
-<div id="wrapper">
-	<div id="sidenav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="pics.html">Pics of Me</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="songs.html">Song of the Week</a></li>
-    </ul>
-	 </div>
- <div id="main">
-  <h1>Jaymes Garbe</h1>
-  
-  <div class="divider">Education</div> 
-  
-  <div class="inner">
-    <p><b>University of California - Berkeley</b>
+    <div id="wrapper">
+      <div id="sidenav">
         <ul>
-            <li>Sophomore, expecting to graduate in 2025</li>
-            <li>Studying Computer Science/Electrical Engineering under the College of Engineering</li>
-            <li>GPA: 3.15</li>
-            <li>42 units completed</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="pics.html">Pics of Me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="songs.html">Song of the Week</a></li>
         </ul>
-    </p>
-    <p><b>Foothill High School</b>
-        <ul>
-            <li>GPA (unweighted): 3.95</li>
-            <li>GPA (weighted): 4.42</li>
-            <li>total of 12 units taken either over the summer or dual-enrolled at Shasta College (CC)</li>
-        </ul>
-    </p>
-   </div>
+      </div>
+      <div id="main">
+        <h1>Jaymes Garbe</h1>
+        <div class="divider">Education</div> 
+          <div class="inner">
+            <p><b>University of California - Berkeley</b>
+              <ul>
+                <li>Sophomore, expecting to graduate in 2025</li>
+                <li>Studying Computer Science/Electrical Engineering under the College of Engineering</li>
+                <li>GPA: 3.15</li>
+                <li>42 units completed</li>
+              </ul>
+            </p>
+            <p><b>Foothill High School</b>
+              <ul>
+                <li>GPA (unweighted): 3.95</li>
+                <li>GPA (weighted): 4.42</li>
+                <li>total of 12 units taken either over the summer or dual-enrolled at Shasta College (CC)</li>
+              </ul>
+            </p>
+          </div>
+        <div class="divider">Extracurriculars/Volunteer Work</div>
+          <div class="inner">
+            <dl>
+              <dt>FHS Track and Field | 9th-12th grade | spring semester</dt>
+              <dd>Learned teamwork and the feeling of unity that being part of a team brings.</dd>
+              <dt>FHS Cross Country| 9th-12th grade | fall semester</dt>
+              <dd>Tested my mental and physical strength, learned endurance and time management through having practice and homework every day.</dd>
+              <dt>FHS Science Bowl| 11th-12th grade | all year</dt>
+              <dd>Practiced all year for a national competiton in the late spring. Teamwork and quick, critical thinking were essential to our success.</dd>
+              <dt>FHS Science Club| 9th-12th grade | all year</dt>
+              <dd>Weekly meetings discussing events; Our main event Starry Night was where students laid under the stars and we provided snacks, telescopes, and music. </dd>
+              <dt>Nature Bridge</dt>
+              <dd>40 hours of volunteer work to help Downtown Redding become a more people-friendly place. Designed flyers, set up booths, and planned community events every week.</dd>
+            </dl>
+          </div>
+        <div class="divider">Work Experience</div> 
+          <div class="inner">
+            <h3>SUHSD Information Technology Dept. | Summer Intership '22</h3>
+            <h4>Synopsis:</h4> 
+            <p>
+              For the three months of my summer, I worked 40 hour weeks plus overtime assisting
+              my former high school district's IT department with multiple software 
+              development projects.
+            </p>
+            <h4>Projects:</h4>
+          <dl class="projects">
+            <dt>Data Metric</dt>
+            <dd>I tore into an existing Virtual Machine that was used for displaying
+              the amount of tickets our department had to accomlplish on a monitor 
+              within our office. We use a new service, FreshService, to track these
+              tickets, and the VM was pulling from the deprecated service. My coworker and I 
+              wrote a Powershell script to pull tickets and devices from SUHSD services using my SPSFreshService 
+              and SPSImmyBot modules I built prior. The data is arranged contingent to 
+              InfluxDB, a time series database that we pipe out ticket data into. 
+              A pipeline containerizes our code using Docker, and sends it to the
+              VM which runs every 10 minutes. We finally built a Grafana instance
+              to query and display our InfluxDB data on the monitor.
+            </dd>
+            <dt>SPSFreshService/SPSImmyBot</dt>
+            <dd>Using the FreshService API documentation, I built my first
+              fully fledged powershell module that queries tickets, agents, requesters,
+              departments, and most other data that our department stores within FreshService.
+              The module is able to create new instances of each object, update existing objects,
+              and collect groups of items based on many different parameters. I then built a similar
+              module based around the ImmyBot service. 
+            </dd>
+            <dt>Clever Toolkit</dt>
+            <dd>I was tasked to build a Chrome Extension to add modularity to the service
+              Clever. I worked in Javascript, CSS, and HTML, all languages I had little 
+              prowess in prior. I used a popup that allows the user to add, delete, 
+              show, and hide columns of Application data displayed on the Clever Developer
+              portal. 
+            </dd>
+            <dt>Aeries-FreshService Sync</dt>
+            <dd>Using my SPSFreshService module and the public AeriesApi, I pulled
+              the data of all the teachers in our district and compared their similar 
+              attributes, overwriting the FreshService entries with the much more populated 
+              and trustworthy Aeries entries.
+            </dd>
+          </dl>
+          <h4>Miscellaneous Skills:</h4>
+          <dl class="projects">  
+            <dt>Powershell</dt>
+            <dd>I knew nothing of the Powershell language before starting this
+            job. I've learned nearly as much about the basics of the Powershell language in these three
+            months than I learned about Python my first year at college. I even began to dive into 
+            slightly more advanced concepts that Powershell allows such as dynamic variables, Pester testing,
+            and logging.
+            </dd>
+            <dt>Azure DevOps</dt>
+            <dd>My partner and I worked almost solely within the Azure Devops environment.
+            I learned a ton about using Azure boards for project cooperation, Azure Pipelines for 
+            automation of numerous different tasks, and, of course, Azure Repos for all the lovely version 
+            control. I was also introduced to Virtual Machines, Azure SQL, and used Azure Virtual 
+            Desktop to do some overtime from home. 
+            <dt>Google Workspace</dt>
+            <dd>I worked a lot with the Google APIs Explorer, as well as Google Apps Script for automation 
+              of all of my applications. My final project, Clever Toolkit, introduced me to the Chrome Developers
+              environment as well.
+            </dd>
+            <dt>Teamwork</dt>
+            <dd>The most valuable thing I learned this summer was how to program as part of a team.
+              It became second nature to document my code thoroughly, and I would never make a commit to 
+              the main branch without peer review of a pull request or something of that manner. I 
+              learned Pair Programming in school, and my partner and I used it often to work through bugs 
+              or complex issues that we could not figure out by ourselves.
+            </dd>
+          </dl>
+        </div>
 
-   <div class="divider">Extracurriculars/Volunteer Work</div>
-   <div class="inner">
-    <dl>
-      <dt>FHS Track and Field | 9th-12th grade | spring semester</dt>
-      <dd>Learned teamwork and the feeling of unity that being part of a team brings.</dd>
-      <dt>FHS Cross Country| 9th-12th grade | fall semester</dt>
-      <dd>Tested my mental and physical strength, learned endurance and time management through having practice and homework every day.</dd>
-      <dt>FHS Science Bowl| 11th-12th grade | all year</dt>
-      <dd>Practiced all year for a national competiton in the late spring. Teamwork and quick, critical thinking were essential to our success.</dd>
-      <dt>FHS Science Club| 9th-12th grade | all year</dt>
-      <dd>Weekly meetings discussing events; Our main event Starry Night was where students laid under the stars and we provided snacks, telescopes, and music. </dd>
-      <dt>Nature Bridge</dt>
-      <dd>40 hours of volunteer work to help Downtown Redding become a more people-friendly place. Designed flyers, set up booths, and planned community events every week.</dd>
-    </dl>
-   </div>
-
-   <div class="divider">Work Experience</div> 
-    <div class="inner">
-      <h3>SUHSD Information Technology Dept. | Summer Intership '22</h3>
-      <h4>Synopsis:</h4> 
-      <p>For the three months of my summer, I worked 40 hour weeks plus overtime assisting
-        my former high school district's IT department with multiple software 
-        development projects.
-      </p>
-      <h4>Projects:</h4>
-      <dl class="projects">
-        <dt>Data Metric</dt>
-        <dd>I tore into an existing Virtual Machine that was used for displaying
-          the amount of tickets our department had to accomlplish on a monitor 
-          within our office. We use a new service, FreshService, to track these
-          tickets, and the VM was pulling from the deprecated service. My coworker and I 
-          wrote a Powershell script to pull tickets and devices from SUHSD services using my SPSFreshService 
-          and SPSImmyBot modules I built prior. The data is arranged contingent to 
-          InfluxDB, a time series database that we pipe out ticket data into. 
-          A pipeline containerizes our code using Docker, and sends it to the
-          VM which runs every 10 minutes. We finally built a Grafana instance
-          to query and display our InfluxDB data on the monitor.
-        </dd>
-        <dt>SPSFreshService/SPSImmyBot</dt>
-        <dd>Using the FreshService API documentation, I built my first
-          fully fledged powershell module that queries tickets, agents, requesters,
-          departments, and most other data that our department stores within FreshService.
-          The module is able to create new instances of each object, update existing objects,
-          and collect groups of items based on many different parameters. I then built a similar
-          module based around the ImmyBot service. 
-        </dd>
-        <dt>Clever Toolkit</dt>
-        <dd>I was tasked to build a Chrome Extension to add modularity to the service
-          Clever. I worked in Javascript, CSS, and HTML, all languages I had little 
-          prowess in prior. I used a popup that allows the user to add, delete, 
-          show, and hide columns of Application data displayed on the Clever Developer
-          portal. 
-        </dd>
-        <dt>Aeries-FreshService Sync</dt>
-        <dd>Using my SPSFreshService module and the public AeriesApi, I pulled
-          the data of all the teachers in our district and compared their similar 
-          attributes, overwriting the FreshService entries with the much more populated 
-          and trustworthy Aeries entries.
-        </dd>
-      </dl>
-      <h4>Miscellaneous Skills:</h4>
-      <dl class="projects">  
-        <dt>Powershell</dt>
-        <dd>I knew nothing of the Powershell language before starting this
-        job. I've learned nearly as much about the basics of the Powershell language in these three
-        months than I learned about Python my first year at college. I even began to dive into 
-        slightly more advanced concepts that Powershell allows such as dynamic variables, Pester testing,
-        and logging.
-        </dd>
-        <dt>Azure DevOps</dt>
-        <dd>My partner and I worked almost solely within the Azure Devops environment.
-        I learned a ton about using Azure boards for project cooperation, Azure Pipelines for 
-        automation of numerous different tasks, and, of course, Azure Repos for all the lovely version 
-        control. I was also introduced to Virtual Machines, Azure SQL, and used Azure Virtual 
-        Desktop to do some overtime from home. 
-        <dt>Google Workspace</dt>
-        <dd>I worked a lot with the Google APIs Explorer, as well as Google Apps Script for automation 
-          of all of my applications. My final project, Clever Toolkit, introduced me to the Chrome Developers
-          environment as well.
-        </dd>
-        <dt>Teamwork</dt>
-        <dd>The most valuable thing I learned this summer was how to program as part of a team.
-          It became second nature to document my code thoroughly, and I would never make a commit to 
-          the main branch without peer review of a pull request or something of that manner. I 
-          learned Pair Programming in school, and my partner and I used it often to work through bugs 
-          or complex issues that we could not figure out by ourselves.
-        </dd>
-      </dl>
+      <div class="divider">Contact Me</div>
+      <div class="inner">
+        <a href="mailto:jrgarbe7@gmail.com" target="_blank">Email</a>
+        - 
+        <a href="https://www.instagram.com/jr_garbe/" target="_blank">Instagram</a>
+        - 
+        <a href="https://www.linkedin.com/in/jr-garbe-4350a4234/" target="_blank">LinkedIn</a>
+        - 
+        <a href="https://github.com/jaymesgarbe" target="_blank">Github</a> 
+      </div>
     </div>
-
-  <div class="divider">Contact Me</div>
-  <div class="inner">
-    <a href="mailto:jrgarbe7@gmail.com" target="_blank">Email</a>
-     - 
-    <a href="https://www.instagram.com/jr_garbe/" target="_blank">Instagram</a>
-     - 
-    <a href="https://www.linkedin.com/in/jr-garbe-4350a4234/" target="_blank">LinkedIn</a>
-     - 
-    <a href="https://github.com/jaymesgarbe" target="_blank">Github</a> 
-  </div>
- </div>
-</div> 
+    </div> 
   </body> 
 </html> 
