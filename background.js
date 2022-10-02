@@ -92,3 +92,32 @@ function handleLike(e) {
       );
   }
 }
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+  output.innerHTML = this.value / 10;
+};
+
+var totalRating = 0;
+var numOfRatings = 0;
+function addRating() {
+  document.getElementById("newFeature").innerHTML = `
+    <center>
+      <br><h3>Submitted rating.<br> Thanks!</h3>
+    </center>`;
+  totalRating += parseFloat(output.innerHTML);
+  numOfRatings++;
+  localStorage.setItem("rating", totalRating / numOfRatings);
+  const rating = document.createElement("div");
+  rating.innerHTML = `
+  <center><h2>Avg. Community Rating:</h2></center><h2>${localStorage.getItem(
+    "rating"
+  )}/10</h2>
+  <h2>${totalRating} / ${numOfRatings}</h2>`;
+  const element = document.getElementById("newFeature");
+  element.appendChild(rating);
+}

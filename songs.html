@@ -216,6 +216,58 @@
         margin-left: 20px;
         margin-right: 20px;
       }
+
+      .slidecontainer {
+        width: 100%; /* Width of the outside container */
+      }
+
+      /* The slider itself */
+      .slider {
+        -webkit-appearance: none; /* Override default CSS styles */
+        appearance: none;
+        width: 80%; /* Full-width */
+        height: 15px; /* Specified height */
+        border-radius: 5px;
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+        transition: opacity 0.2s;
+      }
+
+      /* Mouse-over effects */
+      .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+      }
+
+      /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        border-radius: 50%;
+        background: #80a4ed; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        border-radius: 50%;
+        background: #80a4ed; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+      }
+
+      #submitButton {
+        border: 3px solid #d4cb92;
+        border-radius: 4px;
+        margin: 17px;
+      }
+
+      #submitButton:hover {
+        background-color: #d4cb92;
+      }
     </style>
   </head>
   <!-- Google tag (gtag.js) -->
@@ -271,25 +323,36 @@
               target="_blank"
               ><h3><center>Youtube</center></h3></a
             >
-            <div id="newFeature" hidden>
-              <h2>Do you like this song?</h2>
-              <div class="row">
-                <div class="column">
-                  <center>
-                    <button type="button" id="like" onclick="handleLike()">
-                      Yes !!
-                    </button>
-                  </center>
-                </div>
-                <div class="column">
-                  <center>
-                    <button type="button" id="meh" onclick="">Meh ..</button>
-                  </center>
-                </div>
-                <div class="column">
-                  <center>
-                    <button type="button" id="hate" onclick="">Nah :(</button>
-                  </center>
+            <div id="newFeature">
+              <h2>Rate this song!</h2>
+              <div class="slidecontainer">
+                <center>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="0"
+                    class="slider"
+                    id="myRange"
+                  />
+                </center>
+                <div class="row">
+                  <div class="column">
+                    <center>
+                      <p><span id="demo"></span>/10</p>
+                    </center>
+                  </div>
+                  <div class="column">
+                    <center>
+                      <button
+                        type="button"
+                        id="submitButton"
+                        onclick="addRating()"
+                      >
+                        Submit
+                      </button>
+                    </center>
+                  </div>
                 </div>
               </div>
             </div>
