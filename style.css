@@ -152,7 +152,14 @@ h2 {
 
 img {
   margin: 1px;
+}
+
+.borderedImg {
   border: 4px solid #80a4ed;
+}
+
+.listenIcon:hover {
+  opacity: 70%;
 }
 
 p {
