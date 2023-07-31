@@ -29,6 +29,10 @@ function addToNewsletter() {
   document.getElementById("buttonPopup").hidden = false;
 }
 
+function clearPopup() {
+  document.getElementById("sotwPopup").hidden = true;
+}
+
 const likeCounter = document.createElement("span");
 
 fetch("http://localhost:3000/songs")
